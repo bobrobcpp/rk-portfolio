@@ -5,6 +5,7 @@ body {
 
 html, body, .container {
     height:100%;
+    font-family: 'Roboto Slab', serif;
 }
 
 .main {
@@ -22,11 +23,20 @@ a .fa {
 color: black;
 }
 
+#projects{
+  font-family: 'Open Sans', sans-serif;
+}
+
+#projects h2{
+  font-family: 'Roboto Slab', serif;
+}
+
 /*.box{
   position: absolute;
 }*/
 
 .right-triangle{
+  z-index: -100;
   position: fixed;
   bottom: 0%;
   right: 0%;
@@ -40,6 +50,7 @@ color: black;
 }
 
 .left-triangle{
+  z-index: -100;
   position: fixed;
   top: 0%;
   left: 0%;
