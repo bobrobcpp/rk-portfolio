@@ -21,3 +21,17 @@ html, body, .container {
 a .fa {
 color: black;
 }
+
+
+
+.right-triangle{
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  height: 100%;
+  width: 50%;
+  background: #99FB1A;
+  -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);;
+clip-path: polygon(100% 0, 0% 100%, 100% 100%);;
+
+}
