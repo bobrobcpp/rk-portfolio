@@ -1,0 +1,23 @@
+body {
+  background-color: white;
+}
+
+
+html, body, .container {
+    height:100%;
+}
+
+.main {
+  height: 25%;
+  margin-top: 10px;
+}
+
+.icon-bar{
+  padding: 5px;
+  float: right;
+}
+
+
+a .fa {
+color: black;
+}
