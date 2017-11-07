@@ -1,6 +1,7 @@
-
+// var HTMLbootstrapCard =
+var HTMLbootstrapRow = '<div class="row proj-row"></div>';
+var HTMLbootstrapCard = '<div class="card proj-card"></div>';
 //from helper.js
-
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
@@ -74,8 +75,14 @@ var view = {
 
 displayProjects : function() {
     var projects = controller.getProjects();
+    $("#projects").append(HTMLbootstrapRow);
     for (var i = 0; i < projects.projects.length; i++) {
-        $("#projects").append(HTMLprojectStart);
+        //Create bootstrap row after every fourth project
+        if((i+1)%4===0){
+            $("#projects").append(HTMLbootstrapRow);
+        }
+        $(".proj-row:last").append(HTMLbootstrapCard);
+        $(".proj-card:last").append(HTMLprojectStart);
         var formatPTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("#", projects.projects[i].url);
         var formatPDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
         var formatPDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
@@ -83,14 +90,16 @@ displayProjects : function() {
         $(".project-entry:last").append(formatPDates);
         $(".project-entry:last").append(formatPDescription);
 
-        $("<div class='container imgContain'></div>").insertAfter(".project-entry:last");
+        $("<div class='proj-box img-contain'></div>").insertAfter(".project-entry:last");
 
-        for (var j = 0; j < projects.projects[i].images.length; j++) {
-            var formatPImages = HTMLprojectImage.replace("%data%", projects.projects[i].images[j]);
-
-            $(".container:last").append(formatPImages);
-            $('img:last').addClass('proj-img');
-        }
+        // for (var j = 0; j < projects.projects[i].images.length; j++) {
+        //     var formatPImages = HTMLprojectImage.replace("%data%", projects.projects[i].images[j]);
+        //     $(".proj-box:last").append(formatPImages);
+        //     $('img:last').addClass('proj-img');
+        // }
+        var formatPImages = HTMLprojectImage.replace("%data%", projects.projects[i].images[0]);
+        $(".proj-box:last").append(formatPImages);
+        $('img:last').addClass('proj-img img-fluid');
     }
 
 }
