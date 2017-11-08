@@ -2,10 +2,10 @@
 var HTMLbootstrapRow = '<div class="row proj-row"></div>';
 var HTMLbootstrapCard = '<div class="card proj-card"></div>';
 //from helper.js
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectStart = '<div class="project-entry card-body"></div>';
+var HTMLprojectTitle = '<a href="#" class="card-title proj-title">%data%</a>';
+var HTMLprojectDates = '<div class="date-text card-subtitle mb-2 text-muted">%data%</div>';
+var HTMLprojectDescription = '<p class="card-text"><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
 
 var model = {
@@ -21,7 +21,7 @@ projects : {
         },
 
        {
-            "title": "Web Performance Project: Performant Pizza",
+            "title": "Web Performance Project",
             "dates": "July 2017",
             "description": "Tuned a janky website to run animations smoothly at 60fps",
             "url": "https://github.com/bobrobcpp/pizza-performance",
@@ -30,7 +30,7 @@ projects : {
         },
 
                {
-            "title": "HTML Canvas Project: Frogger Game",
+            "title": "HTML Canvas: Frogger Game",
             "dates": "June 2017",
             "description": "A simple frogger clone using JavaScript and HTML Canvas",
             "url": "https://github.com/bobrobcpp/frontend-nanodegree-arcade-game-",
@@ -88,18 +88,14 @@ displayProjects : function() {
         var formatPDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
         $(".project-entry:last").append(formatPTitle);
         $(".project-entry:last").append(formatPDates);
-        $(".project-entry:last").append(formatPDescription);
 
-        $("<div class='proj-box img-contain'></div>").insertAfter(".project-entry:last");
 
-        // for (var j = 0; j < projects.projects[i].images.length; j++) {
-        //     var formatPImages = HTMLprojectImage.replace("%data%", projects.projects[i].images[j]);
-        //     $(".proj-box:last").append(formatPImages);
-        //     $('img:last').addClass('proj-img');
-        // }
+        $(".project-entry:last").append("<div class='proj-box img-contain'></div>");
+
         var formatPImages = HTMLprojectImage.replace("%data%", projects.projects[i].images[0]);
-        $(".proj-box:last").append(formatPImages);
+        $(".img-contain:last").append(formatPImages);
         $('img:last').addClass('proj-img img-fluid');
+        $(".project-entry:last").append(formatPDescription);
     }
 
 }

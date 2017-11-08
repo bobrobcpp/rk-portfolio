@@ -33,13 +33,18 @@ color: black;
 
 .proj-row{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .proj-card{
   width: 30%;
   margin: 10px;
-  opacity: 0.9;
+  opacity: 0.8;
   border-radius: 10px;
+  display: flex;
+}
+
+.proj-title{
+  font-size: 1.2em;
 }
 
 .img-contain{
