@@ -2,84 +2,97 @@ body {
   background-color: white;
 }
 
-
-html, body, .container {
-    height:100%;
-    font-family: 'Roboto Slab', serif;
-}
-
-.main {
-  height: 25%;
-  margin-top: 10px;
-}
-
-.icon-bar{
-  padding: 5px;
-  float: right;
-}
-
-
-a .fa {
-color: black;
-}
-
-#projects{
-  font-family: 'Open Sans', sans-serif;
-}
-
-#projects h2{
+html,
+body,
+.container {
+  height: 100%;
   font-family: 'Roboto Slab', serif;
 }
 
-.proj-row{
+.main {
+  height: 10%;
+  margin-top: 10px;
+}
+
+.icon-bar {
+  padding: 5px;
+  float: right;
+}
+h1 h4 {
+  padding: 5px;
+}
+
+.my-name {
+  font-size: 2rem;
+}
+
+.nav-row {
+  align-items: center;
+}
+
+a .fa {
+  color: #01579b;
+}
+
+#projects {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#projects h2 {
+  font-family: 'Roboto Slab', serif;
+}
+
+.proj-row {
   display: flex;
   justify-content: flex-start;
 }
-.proj-card{
+.proj-card {
   width: 30%;
   margin: 10px;
   opacity: 0.8;
   border-radius: 10px;
   display: flex;
+  text-align: center;
+  color: #01579b;
 }
 
-.proj-title{
+.proj-title {
   font-size: 1.2em;
 }
 
-.img-contain{
-  display: flex;
-}
+/*.card-text {
+  text-align: left;
+}*/
 
-.proj-img{
+.proj-img {
   margin: auto;
   max-width: 100%;
 }
 
-
-
-.right-triangle{
+.right-triangle {
   z-index: -100;
   position: fixed;
   bottom: 0%;
   right: 0%;
   height: 100%;
   width: 50%;
-  background: #99FB1A;
-  background: linear-gradient(to bottom right, #B9FCBD, #99FB1A);
+  background: #81d4fa;
+  /*  background: #99fb1a;*/
+  /*  background: linear-gradient(to bottom right, #b9fcbd, #99fb1a);*/
   -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
   clip-path: polygon(100% 0, 0% 100%, 100% 100%);
   opacity: 0.7;
 }
 
-.left-triangle{
+.left-triangle {
   z-index: -100;
   position: fixed;
   top: 0%;
   left: 0%;
   height: 100%;
   width: 50%;
-  background: #99FB1A;
+  background: #81d4fa;
+  /*  background: #99fb1a;*/
   -webkit-clip-path: polygon(25% 0, 0 0, 0 25%);
   clip-path: polygon(25% 0, 0 0, 0 25%);
   opacity: 0.7;
