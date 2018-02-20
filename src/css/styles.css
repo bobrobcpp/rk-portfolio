@@ -10,8 +10,11 @@ body,
 }
 
 .main {
-  height: 10%;
   margin-top: 10px;
+}
+
+hr {
+  margin-top: 1px;
 }
 
 .icon-bar {
@@ -22,8 +25,13 @@ h1 h4 {
   padding: 5px;
 }
 
+h4 {
+  font-size: 1rem;
+}
+
 .my-name {
   font-size: 2rem;
+  font-weight: bold;
 }
 
 .nav-row {
@@ -32,6 +40,21 @@ h1 h4 {
 
 a .fa {
   color: #01579b;
+  font-size: 2em;
+}
+
+@media (min-width: 1000px) {
+  hr {
+    margin-top: 16px;
+  }
+  a .fa {
+    font-size: 3em;
+  }
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#01579b' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  border-color: #01579b;
 }
 
 #projects {
@@ -42,27 +65,44 @@ a .fa {
   font-family: 'Roboto Slab', serif;
 }
 
+.lbfont {
+  font-family: 'Libre Baskerville', serif;
+}
+
 .proj-row {
   display: flex;
   justify-content: flex-start;
 }
+
+.c-container {
+  margin-bottom: 15px;
+}
 .proj-card {
-  width: 30%;
+  color: black;
+  font-family: 'Libre Baskerville', serif;
+  /*  width: 30%;*/
   margin: 10px;
+  padding: 10px;
   opacity: 0.8;
   border-radius: 10px;
   display: flex;
   text-align: center;
-  color: #01579b;
+  height: 100%;
 }
 
 .proj-title {
+  color: black;
+  font-style: italic;
   font-size: 1.2em;
 }
 
-/*.card-text {
-  text-align: left;
-}*/
+.card-subtitle {
+  margin-top: 0.5rem;
+}
+
+.card-text {
+  vertical-align: center;
+}
 
 .proj-img {
   margin: auto;
@@ -96,4 +136,47 @@ a .fa {
   -webkit-clip-path: polygon(25% 0, 0 0, 0 25%);
   clip-path: polygon(25% 0, 0 0, 0 25%);
   opacity: 0.7;
+}
+
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  h4 {
+    font-size: 1.5rem;
+  }
+}
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+}
+
+.animated {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }

@@ -1,6 +1,7 @@
 // var HTMLbootstrapCard =
 var HTMLbootstrapRow = '<div class="row proj-row"></div>';
-var HTMLbootstrapCard = '<div class="card proj-card"></div>';
+// var HTMLcontainerDiv = '<div class="col-md-4"></div>';
+var HTMLbootstrapCard = '<div class="col-md-6 col-lg-4 c-container"><div class="card proj-card"></div></div>';
 //from helper.js
 var HTMLprojectStart = '<div class="project-entry card-body"></div>';
 var HTMLprojectTitle = '<a href="#" class="card-title proj-title">%data%</a>';
@@ -94,7 +95,7 @@ var view = {
     displayProjects: function() {
         var projects = controller.getProjects();
         $('#projects').append(HTMLbootstrapRow);
-        for (var i = 0; i < projects.projects.length; i++) {
+        for (let i = 0; i < projects.projects.length; i++) {
             $('.proj-row:last').append(HTMLbootstrapCard);
             $('.proj-card:last').append(HTMLprojectStart);
             var formatPTitle = HTMLprojectTitle.replace('%data%', projects.projects[i].title).replace(
