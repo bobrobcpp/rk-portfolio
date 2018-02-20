@@ -9,6 +9,10 @@ body,
   font-family: 'Roboto Slab', serif;
 }
 
+#navtoggler {
+  justify-content: space-evenly;
+}
+
 .main {
   margin-top: 10px;
 }
